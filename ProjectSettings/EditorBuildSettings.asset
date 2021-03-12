@@ -17,7 +17,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Practice 3/Practice 3.unity
     guid: f4be9a6d07fc4c344a089fbb247e339e
-  - enabled: 1
+  - enabled: 0
     path: Assets/Deliverable 1/Deliverable 1 Scene.unity
     guid: 5f1fbec92e96b05448f36ac7c060971f
+  - enabled: 1
+    path: Assets/Practice 4/Practice 4.unity
+    guid: 71c12b555e70723499a2095e924d43d4
   m_configObjects: {}

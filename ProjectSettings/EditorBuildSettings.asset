@@ -32,7 +32,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Deliverable3/Deliverable 3.unity
     guid: cf2885c964e4c104da0a5e31bf8c1dbc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Lesson9/Lesson9.unity
     guid: 27cc7014c0ffb6642a4a8747acfa8e50
+  - enabled: 1
+    path: Assets/Lesson10/Lesson10.unity
+    guid: 90f72daef3b25b04b9ec9ec9a3e29da1
   m_configObjects: {}

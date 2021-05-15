@@ -5,54 +5,42 @@ using UnityEngine;
 public class SoldierController : MonoBehaviour
 {
 
-    public float acceleration = 1f;
-
     private Animator animator;
+    private CharacterController characterController;
 
-    private CharacterController charController;
+    public float gravity = 1f;
 
-    private float animationValue = 0.02f;
-
+    // Start is called before the first frame update
     void Start()
     {
         animator = GetComponent<Animator>();
-        charController = GetComponent<CharacterController>();
+        characterController = GetComponent<CharacterController>();
     }
 
+    // Update is called once per frame
     void Update()
     {
+        //characterController.Move(Vector3.down * gravity * Time.deltaTime);
 
-        charController.Move(Vector3.down*acceleration*Time.deltaTime);
+        animator.SetFloat("vertical", 0);
+        animator.SetFloat("horizontal", 0);
 
-        //animator.SetFloat("vertical", 0);
-        //animator.SetFloat("horizontal", 0);
-
-        if (Input.GetKey(KeyCode.I))
+        if (Input.GetKey(KeyCode.W))
         {
-            if (animator.GetFloat("vertical") < 1.0f) animator.SetFloat("vertical", animator.GetFloat("vertical") + animationValue);
+            animator.SetFloat("vertical", 1);
         }
-        else if (Input.GetKey(KeyCode.K))
+        else if (Input.GetKey(KeyCode.S))
         {
-            if (animator.GetFloat("vertical") > -1.0f) animator.SetFloat("vertical", animator.GetFloat("vertical") - animationValue);
-        }
-        else 
-        {
-            if (animator.GetFloat("vertical") > 0) animator.SetFloat("vertical", animator.GetFloat("vertical") - animationValue);
-            else if (animator.GetFloat("vertical") < 0) animator.SetFloat("vertical", animator.GetFloat("vertical") + animationValue);
+            animator.SetFloat("vertical", -1);
         }
 
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKey(KeyCode.A))
         {
-            if (animator.GetFloat("horizontal") > -1.0f) animator.SetFloat("horizontal", animator.GetFloat("horizontal") - animationValue);            
+            animator.SetFloat("horizontal", -1);
         }
-        else if (Input.GetKey(KeyCode.L))
+        else if (Input.GetKey(KeyCode.D))
         {
-            if (animator.GetFloat("horizontal") < 1.0f) animator.SetFloat("horizontal", animator.GetFloat("horizontal") + animationValue);
-        }
-        else
-        {
-            if (animator.GetFloat("horizontal") < 0) animator.SetFloat("horizontal", animator.GetFloat("horizontal") + animationValue);
-            else if (animator.GetFloat("horizontal") > 0) animator.SetFloat("horizontal", animator.GetFloat("horizontal") - animationValue);
+            animator.SetFloat("horizontal", 1);
         }
     }
 }

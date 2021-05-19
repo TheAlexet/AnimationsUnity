@@ -5,10 +5,14 @@ using UnityEngine;
 public class SoldierController : MonoBehaviour
 {
 
+    [SerializeField]
+    private GameObject playerCam;
+
     private Animator animator;
     private CharacterController characterController;
+    private Vector3 moveDirection = Vector3.zero;
 
-    public float gravity = 1f;
+    public float gravity = 10.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +28,9 @@ public class SoldierController : MonoBehaviour
 
         animator.SetFloat("vertical", 0);
         animator.SetFloat("horizontal", 0);
+
+        //moveDirection.y -= gravity * Time.deltaTime;
+        //characterController.Move(moveDirection * Time.deltaTime);
 
         if (Input.GetKey(KeyCode.W))
         {

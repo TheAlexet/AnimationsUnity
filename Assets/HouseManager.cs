@@ -15,6 +15,12 @@ public class HouseManager : MonoBehaviour
     [SerializeField]
     private GameObject finalPanel;
 
+    [SerializeField]
+    private GameObject timeline;
+
+    [SerializeField]
+    private GameObject victorySound;
+
     private bool houseCollided;
 
     void Update()
@@ -27,6 +33,8 @@ public class HouseManager : MonoBehaviour
                 {
                     Time.timeScale = 0;
                     finalPanel.SetActive(true);
+                    timeline.SetActive(false);
+                    victorySound.GetComponent<AudioSource>().Play(0);
                 }
             }
         }

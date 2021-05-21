@@ -18,6 +18,9 @@ public class KeyManager : MonoBehaviour
     [SerializeField]
     private GameObject obtainKeyMessage;
 
+    [SerializeField]
+    private AudioSource itemGetSound;
+
     private bool thisKeyCollided;
 
     void Start()
@@ -51,6 +54,7 @@ public class KeyManager : MonoBehaviour
                 PlayerPrefs.SetInt("keysObtained", PlayerPrefs.GetInt("keysObtained", 0) + 1);
                 thisKeyCollided = false;
                 obtainKeyMessage.SetActive(false);
+                itemGetSound.Play();
                 Destroy(this.gameObject);
             }
         }

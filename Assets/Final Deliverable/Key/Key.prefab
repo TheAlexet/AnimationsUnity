@@ -4869,6 +4869,7 @@ MonoBehaviour:
   interfaceKey2: {fileID: 0}
   interfaceKey3: {fileID: 0}
   obtainKeyMessage: {fileID: 0}
+  itemGetSound: {fileID: 0}
 --- !u!1 &3823293210049184464
 GameObject:
   m_ObjectHideFlags: 0
